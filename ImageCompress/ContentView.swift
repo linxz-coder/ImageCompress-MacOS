@@ -152,6 +152,19 @@ struct ContentView: View {
                             .foregroundColor(.primary)
                             .fontWeight(.medium)
                     }
+                    Button {
+                        NSWorkspace.shared.selectFile(outputPath, inFileViewerRootedAtPath: "")
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "folder")  // 添加文件夹图标
+                                .imageScale(.medium)
+                            Text("在文件夹中显示")
+                        }
+                        .frame(maxWidth: .infinity)  // 让按钮填充可用宽度
+                        .padding(.vertical, 8)
+                    }
+                    .buttonStyle(.borderedProminent)  // 使用bordered样式
+                    .controlSize(.regular)
                 }
             }
             
